@@ -1,0 +1,49 @@
+/* Top.css */
+.top-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ flex-direction: column;
+
+}
+
+.top-content {
+  text-align: center;
+    margin-top: 50px;
+ 
+}
+
+
+.iframe-container {
+  display: flex;
+  justify-content: center; /* Center the iframe horizontally */
+  margin: 0 20px; /* Apply left and right margins of 2px */
+  border: 10px solid  #fff;
+  border-radius: 12px; /* Adjust the value to change the roundness of the borders */
+}
+
+.iframe {
+  border: none;
+  overflow: hidden; /* Clip content that overflows the rounded borders */   
+}
+
+
+.back-to-play-btn {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #fff;
+  border-radius: 7px;
+  text-decoration: none;
+  text-decoration: none;
+  color: #008090; /* White text */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-link:hover {
+  background-color: rgba(155, 255, 255, 0.2); /* White with opacity */
+}
+
+

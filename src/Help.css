@@ -1,0 +1,63 @@
+/* HelpView.css */
+.help-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  place-items: center;
+  align-items: center;
+}
+
+.help-content {
+  text-align: center;
+  margin-top: 10px;
+}
+
+
+
+.help-text {
+  text-align: justify;
+  margin-left: 25px;
+  margin-right: 25px;
+  margin-bottom: 25px;
+  color: #fff; /* White text */
+  padding: 10px;
+}
+
+
+.container-mix {
+    position: relative;
+    width: 240px;
+    height: 240px;
+      display: inline-block;
+
+}
+
+.help-image {
+  width: 100%; 
+  height: 100%;
+  user-select: none;
+}
+
+.hand-image {
+  position: absolute;
+  top: 120px;
+  left: 120px;
+  width: 100px; /* Adjust as needed */
+  height: 100px; /* Adjust as needed */
+  user-select: none;
+  animation: rotate 1s ease-in-out infinite; /* Apply the animation */
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-10deg); /* Start rotation from -20 degrees */
+  }
+  50% {
+    transform: rotate(15deg); /* Rotate to 20 degrees at halfway point */
+  }
+  100% {
+    transform: rotate(-10deg); /* Rotate back to -20 degrees */
+  }
+}
+
+

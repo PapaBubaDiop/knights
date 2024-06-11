@@ -1,6 +1,73 @@
+/* App.css */
+
+html,
+body {
+    overflow: hidden;
+} 
+
+* {
+  -webkit-user-drag: none; /* Safari/Chrome */
+  user-drag: none; /* Other browsers */
+}
+
 .App {
   text-align: center;
-}
+  font-family: 'Roboto', sans-serif;
+  }
+  
+  .board {
+  display: grid;
+  background-color: #e4ac7b; 
+
+  border-radius: 20px;
+  border: 15px solid  #e0a070;
+/*   border: 15px solid  #e4ac7b; */
+ 
+  grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+  gap: 0px; /* Gap between cells */
+  width: 100%; /* Span the width of the parent container */
+  max-width: 330px; /* Limit the maximum width of the board */
+  max-height: 360px; /* Limit the maximum width of the board */
+
+  margin: auto;
+  user-select: none;
+  }
+  
+  
+  .cell {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+
+  }
+  
+  .cell img {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+    border-radius: 5px;
+ 
+  }
+
+  
+  .knight {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  user-select: none;
+
+  }
+  
+  .knight img {
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  }
+
+
 
 .App-logo {
   height: 40vmin;
@@ -8,8 +75,8 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  .knight {
+    animation: moveAndRotate 0.5s ease-in-out;
   }
 }
 
@@ -29,10 +96,185 @@
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+   0% {
+    transform:  translateY(-100px) rotate(-30deg);
+
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translateY(10px) rotate(10deg);
+  }
+  100% {
+    transform: translateY(-10px) rotate(-5deg);
+  }
+}   
+
+@keyframes moveAndRotate {
+  0% {
+    transform: translateY(var(--start-pos)) rotate(-30deg); /* Start with no translation and the start angle */
+  }
+  50% {
+    transform: translateY(var(--mid-pos)) rotate(20deg); /* Translate by 100px and the mid angle */
+  }
+  100% {
+    transform: translateY(var(--end-pos)) rotate(-10deg); /* Back to original position with the end angle */
   }
 }
+
+
+.bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Align child divs at the ends of the container */
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 60px;
+
+}
+
+.number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Change text color as needed */
+  font-size: 36px; /* Adjust font size as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+  text-align: center; /* Center align the text */
+  opacity: 0.9;
+}
+
+.number2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Change text color as needed */
+  font-size: 32px; /* Adjust font size as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+  text-align: center; /* Center align the text */
+  opacity: 0.9;
+}
+
+.number3 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Change text color as needed */
+  font-size: 28px; /* Adjust font size as needed */
+  font-weight: bold; /* Adjust font weight as needed */
+  text-align: center; /* Center align the text */
+  opacity: 0.9;
+}
+
+
+
+.final-link {
+  display: inline-block;
+  padding: 12px 12px;
+  background-color: #f33;
+  border-radius: 7px;
+  color: #fff; /* White text */
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+/* CustomLink.css */
+.custom-link {
+  display: inline-block;
+  padding: 12px 12px;
+  background-color: #fff;
+  border-radius: 7px;
+  color: #006070; /* White text */
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-link:hover {
+  background-color: rgba(155, 255, 255, 0.2); /* White with opacity */
+}
+
+
+.back-to-play-btn {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #fff;
+  border-radius: 7px;
+  text-decoration: none;
+  color: #008090; /* White text */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 80%; /* Full width minus left and right margins */
+}
+
+
+
+
+.version {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px 12px;
+  text-decoration: none;
+  color: white; /* White text */
+  font-size: 15px;
+  font-weight: bold;
+}
+
+
+
+.save-score-btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 15px 12px;
+  background-color: #f34;
+  border-radius: 7px;
+  text-decoration: none;
+  color: white; /* White text */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 80%; /* Full width minus left and right margins */
+}
+
+.nosave-score-btn {
+  margin-top: 50px;
+  margin-bottom: 60px;
+
+  display: inline-block;
+  padding: 12px 12px;
+  background-color: #fff;
+  border-radius: 7px;
+  text-decoration: none;
+  color: #a02020; /* White text */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 80%; /* Full width minus left and right margins */
+}
+
+
+.loading-overlay {
+    position: fixed; /* or 'absolute' if you want it relative to a container with position: relative; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(128, 128, 128, 0.5); /* grey color with transparency */
+    color: white; /* text color */
+    font-size: 20px;
+}
+
+
+
+
+

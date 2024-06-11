@@ -1,0 +1,41 @@
+/* Score.css */
+.score-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ flex-direction: column;
+
+}
+
+.score-content {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.score-content h3 {
+  color: white; /* White text */
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 12px;
+  padding: 15px 10px;
+  border: 2px solid  #fff;
+
+}
+
+.score-content p {
+  text-align: justify;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 0px;
+  color: white; /* White text */
+  border-radius: 12px;
+  padding: 10px;
+}
+
+.ton-image {
+  width: 48px; /* Adjust image width as needed */
+  margin-top: 25px;
+}
+
+
+
